@@ -231,7 +231,7 @@ tl.to(".frame.top", { width: "100%", duration: 0.4 })
     ease: "power2.out",
     onStart: () => {
       document.querySelector(".fade-box").style.backgroundImage = 
-        "linear-gradient(90deg,rgba(255, 16, 68, 1) 0%, #ff5858 100%)";
+        "linear-gradient(90deg,rgba(203, 231, 15, 1) 0%, rgba(219, 243, 134, 1)";
     }
   }, "+0")
   
@@ -454,10 +454,10 @@ gsap.from(".contact-form input, .contact-form textarea, .contact-form button", {
   },
   opacity: 0,
   y: 20,
-  duration: 0.8,
+  duration: 0.7,
   ease: "power2.out",
   stagger: 0.2,
-  delay: 0.5
+  delay: 0.3
 });
 
   

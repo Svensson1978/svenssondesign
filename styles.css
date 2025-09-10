@@ -4,6 +4,11 @@
 
 
 /* generelt */
+.no-margin-top {
+  margin-top: 0 !important;
+}
+
+
 
 * {
   box-sizing: border-box;
@@ -22,8 +27,24 @@ body {
   margin: 0;
    overflow-x: hidden;
   flex-direction:column;
+  background: linear-gradient(to right, rgba(22,22,22,0.15) 0%, white 20%, white 80%, rgba(22,22,022,0.15) 100%);
+
+   
 
 
+}
+
+.fade {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-color);
+  animation: fadeOut 5.0s ease forwards;
+  z-index: -9;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
 }
 
 :root {
@@ -31,9 +52,9 @@ body {
   --secondary-color: #3b3b3b;
   --glitch1pink: rgb(247, 52, 247);
   --glitch2cyan: rgb(53, 255, 255);
-  --retroSpank: #ff1044;
+  --retroSpank: #cbe70f;
   --bigOrange: #ff5858;
-  --retroGradient: linear-gradient(90deg,rgba(255, 16, 68, 1) 0%, #ff5858 100%);
+  --retroGradient: linear-gradient(90deg,rgba(203, 231, 15, 1) 0%, rgba(219, 243, 134, 1));
   --text-color: #3b3b3b;
   --bg-color: #161616;
   --button-color: #00ffff88;
@@ -160,13 +181,16 @@ strong::after {
   bottom: 0.08em;
   left: 0;
   width: 0%;
-  height: 1px;
+  /* height: 1px; */
   background-color: var(--retroSpank);
   transition: width 1.5s ease;
 }
 
 .underline-strong.underline-active {
   color: var(--retroSpank); 
+  background-color: var(--primary-color);
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .underline-strong.underline-active::after {
@@ -489,7 +513,7 @@ background-size:7px 7px;
   font-weight: 700;
   font-size: 1.0rem;
   padding-top: 1.3rem;
-  color: white;
+  color: var(--bg-color);
   position: relative;
   z-index: 1;
   text-transform: uppercase;
@@ -505,7 +529,7 @@ background-size:7px 7px;
 
 #mainTextColorMark01 {
   font-weight: 600;
-  color: var(--glitch1pink);
+  color: var(--primary-color);
   font-size: 1rem;
  
 }
@@ -514,7 +538,7 @@ background-size:7px 7px;
   font-weight: 700;
   letter-spacing: 0.5px;
   font-size: 1rem;
-  background-color: var(--text-color);
+  background-color: var(--primary-color);
   color:white;
   padding-left: 8px;
   padding-right: 8px;
@@ -531,7 +555,7 @@ background-size:7px 7px;
 }
 
 .fa-brands {
-  color: white;
+  color: var(--primary-color);
 }
 
 /* .mainText ul li:hover {
@@ -544,7 +568,7 @@ background-size:7px 7px;
   display: inline-block;
   margin-right: 0.6rem;
   font-size: 1.2rem;
-  color: white;
+  color: var(--primary-color);
   vertical-align: middle;
   top: 0.3em;
   animation: rotateStar 4s infinite linear;
@@ -556,7 +580,7 @@ background-size:7px 7px;
   margin-bottom: 0.8rem;
   margin-left: 1.6rem;
   font-weight: 600;
-  color: white;
+  color: var(--primary-color);
 }
 
 
@@ -571,10 +595,14 @@ background-size:7px 7px;
 
 
 .mainHeader {
-  font-weight: 800; 
+  background: var(--primary-color);
+  padding-left: 10px;
+    padding-right: 10px;
+  font-weight: 600; 
   color: var(--retroSpank);
   font-size: 1.7rem;
   margin-bottom: 10px;
+  box-shadow: black;
    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6);
    position: relative;
    display: inline-block;
@@ -607,12 +635,12 @@ background-size:7px 7px;
 }
 .fokus-col .mainHeader {
   padding-top: 1rem;
-  color: white;
+  color: var(--primary-color);
   text-transform: uppercase;
   font-size: 1.4rem;
   font-weight: 700;
   letter-spacing: 1px;
-  
+  background: none;
 }
 
 
@@ -900,16 +928,16 @@ left: -5px;
   
 }
 
-.case-card:hover .case-title {
-  color: var(--retroSpank);
+/* .case-card:hover .case-title {
+  color: var(--);
   transition: color 0.3s ease;
-}
+} */
 
 .case-title {
   color: var(--bg-color);
   font-weight: 500;
   font-size: 0.7rem;
-  text-align: center;
+  /* text-align: center; */
   margin-top: 0.5rem;
   line-height: 1.3;
   
@@ -922,12 +950,16 @@ left: -5px;
 
 .case-title.header {
   color: var(--retroSpank);
-  font-weight: 800;
-  font-size: 0.9rem;
+  font-weight: 600;
+  font-size: 0.85rem;
   text-align: center;
-  margin-top: 0.5rem;
+  display: inline-block;
+  text-align: center;
   line-height: 1.3;
-  
+  background-color: var(--primary-color);
+  padding: 2px 4px;
+  margin-bottom: 0;
+
 }
 
 .case-thumb-wrapper {
@@ -998,7 +1030,7 @@ left: -5px;
   border-radius: 4px;
   border: none;
   background: var(--retroSpank);
-  color: white;
+  color: var(--primary-color);
   transition: color 0.3s ease, text-decoration 0.3s ease;
   
  
@@ -1006,7 +1038,7 @@ left: -5px;
 
 .filter-links .filter-btn:hover {
   color: white;
-  background-color: var(--bigOrange);
+  background-color: var(--retroSpank);
   /* text-decoration: underline; */
 }
 
@@ -1161,7 +1193,6 @@ padding-right: 15px;
     padding-left: 15px;
     padding-right: 15px;
   }
-
 
 
   .menu {
