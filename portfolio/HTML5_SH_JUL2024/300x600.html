@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>300x600</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="ad.size" content="width=300,height=600">
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="sh_styles.css">
+
+<link rel="stylesheet" type="text/css" href="snow.css">
+
+</head>
+
+
+<body>
+
+
+	<div class="bannerBG">
+	
+	<div class="bgpix"><img src="images/bg.png"></div> 
+	<div class="gran"><img src="images/gran.png"></div> 
+
+	<div class="logo"><img src="images/logo.png"></div> 
+	
+	<div class="fp" id="fp1"><img src="images/fp1.png"></div> 
+	<div class="fp" id="fp2"><img src="images/fp2.png"></div> 
+	
+	
+	<div class="sp" id="sp1"><img src="images/sp1.png"></div> 
+	<div class="sp" id="sp2"><img src="images/sp2.png"></div> 
+
+	<div class="sp" id="sp3"><img src="images/sp3.png"></div> 
+
+<script>
+
+loop = 0;
+loopMax = 6;
+
+
+var tl = gsap.timeline({repeat: -1, repeatDelay: 4.5});
+
+
+
+tl.fromTo("#fp1", {opacity: 0.01, duration: 0.7, scale: 0.3}, {duration: 1, opacity: 1, duration: 0.7, scale: 1});
+tl.fromTo("#sp1", {x: 100, opacity: 0.01, duration: 0.7}, {ease: "elastic", x: 0, duration: 1, opacity: 1},"<0.5");
+
+
+tl.call(loopCheck)
+
+tl.to("#fp1", {opacity: 0.01, duration: 0.7, scale: 1},"<4.5");
+tl.to("#sp1", {opacity: 0.01, duration: 0.7, scale: 1},"<0");
+
+
+tl.fromTo("#fp2", {opacity: 0.01, duration: 0.7, scale: 0.3}, {duration: 1, opacity: 1, duration: 0.7, scale: 1},"<0.1");
+tl.fromTo("#sp2", {opacity: 0.01, duration: 1, scale: 0.8}, {scale: 1, ease: "elastic", duration: 1, opacity: 1},"<0.5");
+tl.fromTo("#sp3", {opacity: 0.01, duration: 1, scale: 0.8}, {scale: 1, ease: "elastic", duration: 1, opacity: 1},"<2");
+
+
+function loopCheck() {
+  //console.log("")
+     loop++;
+     if (loop < loopMax) {
+      //  console.log("")
+        tl.play();
+     } else{
+     //  console.log("")
+       tl.pause();
+     }
+   }
+		
+
+
+
+</script>
+
+
+<div class="snowflakes">
+
+
+
+
+<script>
+   
+	var snowFlakeContainer = document.querySelector('.snowflakes');
+	
+	
+	
+	//sæt antal snekorn under amount
+	
+	let amount = 55;
+		for (var i = 0; i < amount; i += 1) {
+			
+			let lr = Math.floor((Math.random() * 400) - 200);
+			let flake = document.createElement("i");
+			flake.style.setProperty('--leftright', lr + 'px')
+			snowFlakeContainer.appendChild(flake);
+					
+		}
+
+	
+
+	console.log(snowFlakeContainer);
+
+</script>
+</div>
+</body>
+</html>

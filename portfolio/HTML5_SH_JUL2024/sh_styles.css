@@ -1,0 +1,84 @@
+
+body {
+  
+	margin:0; 
+	padding: 0;
+	background-image:
+}
+
+.box {
+  display: block;
+  }
+  
+h2 {
+  color: red;
+  }
+  
+.bannerBG {
+  position:absolute;
+        width:300px;
+        height:600px;
+        background-color: #fff;
+        -webkit-box-sizing:border-box;
+        -moz-box-sizing:border-box;
+        box-sizing:border-box;
+        overflow:hidden;
+        cursor: pointer;
+    }
+
+.bgpix {
+	position: absolute;
+	display:inline-block;
+	}
+
+
+
+
+.fp {
+	position: absolute;
+	z-index: 1;
+	display:inline-block;
+	
+	}
+
+.sp {
+	position: absolute;
+	z-index: 4;
+	display:inline-block;
+	
+	}
+.cta {
+	position: absolute;
+	z-index: 5;
+	display:inline-block;
+	
+	}
+	
+	.logo {
+	position: absolute;
+	z-index: 2;
+	display:inline-block;
+	
+	}
+	
+
+ #sp2 {
+	position: absolute;
+	z-index: 5;
+	display:inline-block;
+	
+	}
+	
+	.snowflakes {
+	position: absolute;
+	z-index: 2;
+	display:inline-block;
+	
+	}
+
+	.gran {
+		position: absolute;
+		z-index: 1;
+		display:inline-block;
+		
+		}

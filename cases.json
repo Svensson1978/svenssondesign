@@ -1,5 +1,13 @@
 [
-
+  {
+    "title": "HTML5-banner (Se & Hør) ",
+    "subtitle": "Banner julekampagne, 600x300 pixels",
+    "category": "html5",
+    "media": "portfolio/HTML5_SH_JUL2024/300x600.html",
+    "thumb": "portfolio/thumbs/sh_jul_html5_thumb.jpg",
+    "type": "html5",
+    "size": "300x600"
+  },
   {
     "title": "WP Visitkort side (Japaninfo)",
     "subtitle": "Enkel præsentation til lille virksomhed",
@@ -95,10 +103,10 @@
 
     {
     "title": "Magasinlayout (Elektrikeren",
-    "subtitle": "Layout af sider til fagblad",
+    "subtitle": "LAyoutede opslag til fagblad",
     "category": "Print",
-    "media": "portfolio/Opslag_magasin_elektrikeren_P07.jpg",
-    "thumb": "portfolio/thumb_P07.jpg",
+    "media": "portfolio/elektrikeren_opslag.jpg",
+    "thumb": "portfolio/thumbs/elektrikeren_thumb.jpg",
     "type": "Print",
     "size": "600x600"
   },
@@ -151,6 +159,18 @@
     "thumb": "portfolio/thumbs/thumb_ally01.png",
     "type": "html5",
     "size": "930x180"
+  },
+
+    {
+    "title": "ugebladlayout SØNDAG",
+    "subtitle": "Layout af modeserie",
+    "category": "Print",
+    "media": "portfolio/soendag_opslag.jpg",
+    "thumb": "portfolio/thumbs/soendag_thumb.jpg",
+    "type": "Print",
+    "size": "600x600"
   }
+
+  
 
 ]
