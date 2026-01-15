@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Svensson Design</title>
+  <link rel="stylesheet" href="styles.css">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+
+<meta name="robots" content="noindex, nofollow">
+
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <img src="images/site_assets/mainLogo2026_svenssondesign_RGB_1line.svg" alt="Dit Logo">
+    </div>
+
+
+
+    <div class="filters">
+      <button data-filter="all">Alle</button>
+      <button data-filter="SoMe">Sociale medier og TV</button>
+      <button data-filter="explainer">Explainers og undervisning</button>
+      <button data-filter="animF">Animerede fortællinger</button>
+      <button data-filter="produkt">Infografik</button>
+      <button data-filter="foto">Fotos</button>
+    </div>
+  </div>
+</header>
+
+
+<main>
+
+
+<div class="portfolio" id="portfolio"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+<script>
+
+  
+const portfolioContainer = document.getElementById('portfolio');
+const filterButtons = document.querySelectorAll('.filters button');
+let lightbox;
+
+// Hash-filter
+let initialFilter = window.location.hash.replace('#','') || 'all';
+
+// Hent JSON
+fetch('portfolio.json')
+  .then(res => res.json())
+  .then(data => {
+    renderPortfolio(data);
+    initFilters();
+    applyFilter(initialFilter);
+  })
+  .catch(err => {
+    console.error(err);
+    portfolioContainer.innerHTML = '<p>Portfolio kunne ikke indlæses.</p>';
+  });
+
+function renderPortfolio(items) {
+  portfolioContainer.innerHTML = '';
+
+  items.forEach(item => {
+    const figure = document.createElement('figure');
+    figure.className = 'portfolio-item';
+    if(item.categories) figure.dataset.categories = item.categories.join(' ');
+
+    const link = document.createElement('a');
+    link.href = item.full;
+    link.className = 'glightbox';
+
+    // Video eller billede
+    const ext = item.full.split('.').pop().toLowerCase();
+    if(ext === 'mp4') {
+      link.setAttribute('data-type', 'video');
+    } else {
+      link.setAttribute('data-gallery', 'portfolio');
+    }
+
+    // Caption i lightbox
+if(item.description) {
+  link.setAttribute('data-title', item.description);
+}
+
+    const img = document.createElement('img');
+    img.src = item.thumb;
+    img.alt = item.alt || '';
+    link.appendChild(img);
+
+    const caption = document.createElement('figcaption');
+    caption.className = 'caption';
+    caption.textContent = item.caption || '';
+
+    figure.appendChild(link);
+    figure.appendChild(caption);
+    portfolioContainer.appendChild(figure);
+  });
+
+  // Init GLightbox
+  if(lightbox) lightbox.destroy();
+  lightbox = GLightbox({ selector: '.glightbox' });
+}
+
+function initFilters() {
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const filter = btn.dataset.filter;
+      history.replaceState(null, '', '#' + filter);
+      applyFilter(filter);
+    });
+  });
+}
+
+function applyFilter(filter) {
+  filterButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.filter === filter));
+
+  document.querySelectorAll('.portfolio-item').forEach(item => {
+    const categories = item.dataset.categories || '';
+    item.style.display = (filter === 'all' || categories.includes(filter)) ? '' : 'none';
+  });
+}
+</script>
+</main>
+
+<footer>
+  <h2>Freelance grafik og foto</h2>
+  <div class="contact-info">
+    <span id="phone"></span><span id="mail"></span>
+
+ 
+  </div>
+
+<script>
+ 
+  const phone = ['+45','23','70','23','53'].join(' ');
+  const mail = ['design','@','mikkelsvensson.dk'].join('');
+  document.getElementById('phone').textContent = 'Tlf. ' + phone;
+  document.getElementById('mail').textContent = 'Mail: ' + mail;
+</script>
+</footer>
+
+
+</body>
+</html>

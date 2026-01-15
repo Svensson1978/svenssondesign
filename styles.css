@@ -1,0 +1,274 @@
+    html, body {
+     font-family: "Inter", sans-serif;
+      height: 100%;
+        flex-direction: column;
+      background: #f3f3ec;
+      color: #333333;
+       margin: 0;
+  padding: 0;
+  display: flex;
+    }
+    :root {
+      /* Caption styling variables - change these to style captions across the site */
+      --caption-color: #333333;
+      --caption-font-size: 0.9rem;
+      --caption-line-height: 1.2;
+    }
+
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 350px);
+  /* gap: -15px; */
+  justify-content: center; /* centrerer grid’et, når ikke fyldt */
+  max-width: 1400px;     /* maks bredde for hele griddet */
+  margin: 0 auto;         /* centrer griddet horisontalt */
+
+}
+
+
+
+header {
+  
+   padding: 0 1rem 0 1rem; /* fjern bund-padding */
+  
+}
+/* Wrapper der holder både logo og filter-knapper */
+.header-container {
+ max-width: 1400px;
+  margin: 0 auto;
+  padding: 5rem 4rem 0 4rem; /* top 2rem, bund 0 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.header-inner {
+  display: flex;
+  justify-content: space-between; /* logo til venstre, knapper til højre */
+  align-items: center;
+  max-width: 1400px;   /* holder indhold centreret */
+  margin: 0 auto;
+  flex-wrap: wrap;      /* giver plads på små skærme */
+}
+
+/* Logo flugter venstre */
+.logo {
+  text-align: center; /* logoets venstrekant følger containerens venstre kant */
+  margin-bottom: 3.5rem; /* afstand til filter-knapper */
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+}
+
+/* Filter buttons styling */
+.filters {
+  display: flex;
+  justify-content: center;  /* centrer knapper */
+  flex-wrap: wrap;          /* flere linjer ved behov */
+  gap: 0.6rem;                /* mellemrum mellem knapper */
+  margin-bottom: 0.5rem;
+
+}
+
+.filters button {
+  margin: 0.2rem;
+  cursor: pointer;
+  color: #333333;
+  background: none;
+  border: none;
+  padding: 0.1rem 0.4rem;
+  font: inherit;
+  position: relative;
+
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  font-weight: 500;
+
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.filters button.active {
+  color: #ff5d38;
+}
+
+.filters button:hover {
+  transform: scale(1.05);  /* giver “fed/tyngde” */
+}
+
+main {
+  flex: 1; /* alt indhold fylder al ledig plads */
+}
+
+
+.portfolio .portfolio-item a {
+  display: block;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 1 / 1;       /* ens højde */
+  
+  /* border-radius: 10px;   */
+}
+
+.portfolio img {
+  width: 115%;                /* lidt bredere end boksen */
+  height: 100%;
+  object-fit: cover;
+  transform: translateX(-8%); /* start lidt til venstre */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  filter: grayscale(100%); /* sort/hvid som standard */
+}
+
+.portfolio img:hover {
+  transform: translateX(0);   /* glider ind til korrekt position */
+  opacity: 0.8;
+  filter: grayscale(0%); /* sort/hvid som standard */
+}
+
+/* Figure / caption styling for gallery items */
+.portfolio .portfolio-item {
+  display: block;
+}
+
+.portfolio .portfolio-item .caption {
+  text-align: center; /* eller left, hvad du vil */
+  color: var(--caption-color, #333333); /* fallback hvis variablen ikke findes */
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin-top: 8px;
+  line-height: var(--caption-line-height, 1.2);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: "Inter", sans-serif; /* tvinger fonten */
+}
+
+.portfolio-item {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.portfolio-item.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+
+
+
+
+/* Billeder og videoer i GLightbox */
+.glightbox-container img,
+.glightbox-container video {
+  max-width: 80vw;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+    .gslide-title {
+      color: #333333;           /* Hvid tekst */
+      font-size: 0.8rem        /* Lille tekst */!important;
+      line-height: 1.0rem !important;         /* Stram line-height */
+      margin: 0;                /* Ingen ekstra margin */
+      padding: 0 10px;          /* Lidt horisontal padding */
+      text-align: center;       /* Center tekst */
+      max-width: 90vw;          /* Begrænset bredde */
+      word-break: break-word;   /* Bryd lange ord */
+       font-family: "Inter", sans-serif !important;
+    }
+
+
+/* Footer */
+footer {
+
+   position: static;   /* holder footeren fast i bunden */
+  bottom: 0;
+  left: 0;
+  width: 100%; 
+
+ display: flex;
+  flex-direction: column; /* flere linjer stablet lodret */
+  justify-content: center; /* centrer lodret */
+  align-items: center;     /* centrer horisontalt */
+padding-bottom: 36px;
+  text-align: center;
+  margin: 2rem 0;
+  
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: #f3f3ec;
+  background-color: #333333;
+  height: auto;
+  
+  z-index: 10;
+}
+footer a {
+  color: #f3f3ec;        /* ønsket farve */
+  text-decoration: none; /* fjern understregning */
+  transition: color 0.3s ease; /* blød hover-effekt */
+}
+
+footer a:hover {
+  color: #f3f3ec;        /* farve ved hover */
+  text-decoration: underline; /* evt. kun ved hover */
+}
+footer h2 {
+  
+  font-size: 1.0rem;          /* lidt større end normal tekst */
+  font-weight: 400;
+  text-transform: uppercase;
+ letter-spacing: 4px;
+ color: #ff5d38;
+}
+
+footer .contact-info {
+  display: flex;
+  flex-wrap: none;          /* flyder til næste linje, hvis pladsen ikke er nok */
+  justify-content: center;  /* centrerer indhold horisontalt */
+  gap: 0.5rem 2.3rem;        /* afstand mellem divs */
+  font-size: 0.8rem;
+  
+}
+
+
+
+/* Mobilvenlig header og knapper */
+@media (max-width: 500px) {
+  /* Logo bliver mindre */
+  .logo img {
+    height: 38px; /* mindre logo på mobil */
+     margin-bottom: 0.4rem;
+  }
+
+  /* Filter-knapper stacked lodret */
+  .filters {
+    flex-direction: column; /* lodret */
+    align-items: center;    /* centrer dem horisontalt */
+    gap: 0.6rem;            /* mindre luft mellem knapper */
+    margin-bottom: 0.5rem;
+  }
+
+  .filters button {
+    width: 80%;            /* lidt bredere for bedre touch */
+    margin: 0.1rem 0;      /* mellemrum lodret */
+  }
+.header-container {
+
+  padding: 2rem 1rem 0 1rem; 
+
+}
+
+
+  footer .contact-info {
+    display: flex;
+    flex-direction: column; /* lodret */
+    align-items: center;
+    gap: 0.4rem; /* lidt luft mellem linjerne */
+
+}
+}

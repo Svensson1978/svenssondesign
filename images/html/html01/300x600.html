@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>300x600</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="ad.size" content="width=300,height=600">
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="ally_styles.css">
+
+</head>
+
+
+<body>
+
+
+	<div class="bannerBG">
+	<div class="info"><img src="images/info.png" width="300" height="600"></div> 
+	<div class="bgpix"><img src="images/bg.jpg"></div> 
+
+
+	<div class="logo"><img src="images/logo_ally.png" width="300" height="600"></div> 
+	
+
+
+
+	
+	<div class="phone"><img src="images/phone.png" width="300" height="600"></div> 
+	<div class="ru"><img src="images/ru.png" width="300" height="600"></div> 
+	<div class="ru"><img src="images/btn.png" width="300" height="600"></div> 
+	<div class="textf"><img src="images/f3text0.png" width="300" height="600"></div> 
+	<div class="textf"><img src="images/f3text1.png" width="300" height="600"></div> 
+	<div class="textf"><img src="images/f3text2.png" width="300" height="600"></div> 
+	<div class="textf"><img src="images/f3text3.png" width="300" height="600"></div> 
+
+</div>
+
+<script>
+
+loop = 0;
+loopMax = 6;
+
+
+var tl = gsap.timeline({repeat: -1, repeatDelay: 2});
+
+
+
+tl.from(".phone", {opacity: 0.01, duration: 1.2,  ease: Power3.easeOut, x: -250 },"<0.0");
+
+
+tl.to(".phone", {opacity: 0.01, duration: 0.7,  x: 250, ease: Power3.easeIn} ,"<2") ;
+
+tl.from(".textf", {opacity: 0.01, duration: 0.7,  y: -40, stagger: 0.2, ease: Power3.ease} ,"<0.5") ;
+
+tl.call(loopCheck)
+
+
+tl.to(".textf", {opacity: 0.01, duration: 0.5,  y: 10, stagger: -0.0, ease: Power3.ease} ,"<4") ;
+ 
+
+function loopCheck() {
+  //console.log("")
+     loop++;
+     if (loop < loopMax) {
+      //  console.log("")
+        tl.play();
+     } else{
+     //  console.log("")
+       tl.pause();
+     }
+   }
+		
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
