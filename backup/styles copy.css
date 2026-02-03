@@ -22,7 +22,7 @@
   justify-content: center; /* centrerer grid’et, når ikke fyldt */
   max-width: 1400px;     /* maks bredde for hele griddet */
   margin: 0 auto;         /* centrer griddet horisontalt */
-  
+
 }
 
 
@@ -122,7 +122,6 @@ main {
   transform: translateX(-8%); /* start lidt til venstre */
   transition: transform 0.3s ease, opacity 0.3s ease;
   filter: grayscale(100%); /* sort/hvid som standard */
-  
 }
 
 .portfolio img:hover {
@@ -134,22 +133,13 @@ main {
 /* Figure / caption styling for gallery items */
 .portfolio .portfolio-item {
   display: block;
-
-  
-}
-
-.portfolio .portfolio-item a {
-  display: block;
-  border: 2px solid #353535;
-  
-  overflow: hidden;
 }
 
 .portfolio .portfolio-item .caption {
   text-align: center; /* eller left, hvad du vil */
   color: var(--caption-color, #333333); /* fallback hvis variablen ikke findes */
-  font-size: 0.9rem;
-  font-weight: 400;
+  font-size: 0.7rem;
+  font-weight: 600;
   margin-top: 8px;
   line-height: var(--caption-line-height, 1.2);
   overflow: hidden;
@@ -207,7 +197,7 @@ footer {
   align-items: center;     /* centrer horisontalt */
 padding-bottom: 36px;
   text-align: center;
-  margin: 0rem 0;
+  margin: 2rem 0;
   
   font-family: inherit;
   font-size: 0.85rem;

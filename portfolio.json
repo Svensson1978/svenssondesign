@@ -1,84 +1,13 @@
 [
   {
-    "thumb": "images/video/thumbs/V01_AnimF01.jpg",
-    "full": "images/video/V01_AnimF01.mp4",
-    "alt": "Animeret fortælling 1",
-    "caption": "Dræbte deres bedste veninde",
-    "description": "krimiserie for ugebladet Ude og hjemmme. Speak og lyd er klippet og redigeret i Adobe Audtion. Tegningerne er leveret som Illustator filer (hermanditte.com) og animation og samlet redigering er lavet i Adobe After Effects",
-     "categories": ["video", "kampagne", "animF"],
+    "thumb": "images/thumbs/undervisning_thumb50.jpg",
+    "full": "https://vimeo.com/1161428917",
+    "alt": "Undervisningsvideoer",
+    "caption": "Undervisningsvideoer",
+    "description": "",
+     "categories": ["video"],
     "type": "video"
-    },
-  {
-    "thumb": "images/video/thumbs/V02_AnimF02.jpg",
-    "full": "images/video/V02_AnimF02.mp4",
-    "alt": "Animeret fortælling 2",
-    "caption": "Min dumhed kostede mig alt",
-    "description": "Dramaserie for ugebladet Ude og hjemmme. Speak og lyd er klippet og redigeret i Adobe Audtion. Tegningerne er leveret som Illustator filer (hermanditte.com) og animation og samlet redigering er lavet i Adobe After Effects",
-     "categories": ["video", "kampagne", "animF"],
-      "type": "video"
-  },
+    }
 
-    {
-    "thumb": "images/video/thumbs/V03_AnimF03.jpg",
-    "full": "images/video/V03_AnimF03.mp4",
-    "alt": "Animeret fortælling 3",
-    "caption": "Min datter var klassens tyran",
-    "description": "Dramaserie for ugebladet Ude og hjemmme. Speak og lyd er klippet og redigeret i Adobe Audtion. Tegningerne er leveret som Illustator filer (hermanditte.com) og animation og samlet redigering er lavet i Adobe After Effects",
-     "categories": ["video", "kampagne", "animF"],
-       "type": "video"
-    
-  },
-
-      {
-    "thumb": "images/video/thumbs/V04_AnimF04.jpg",
-    "full": "images/video/V04_AnimF04.mp4",
-    "alt": "Animeret fortælling 4",
-    "caption": "Mit drikkeri ødelagde alt",
-    "description": "Dramaserie for ugebladet Ude og hjemmme. Speak og lyd er klippet og redigeret i Adobe Audtion. Tegningerne er leveret som Illustator filer (hermanditte.com) og animation og samlet redigering er lavet i Adobe After Effects",
-     "categories": ["video", "kampagne", "animF"],
-       "type": "video"
-    
-  },
-
-     {
-    "thumb": "images/video/thumbs/V05_SoMe01.jpg",
-    "full": "images/video/V05_SoMe01.mp4",
-    "alt": "SoMe 1",
-    "caption": "10 sekunders kampagnespot",
-    "description": "Kampagnespot for magasinet Spis Bedre. Animeret og redigeret i Adobe After Effects",
-     "categories": ["SoMe"],
-       "type": "video"
-    
-  },
-     {
-    "thumb": "images/video/thumbs/V06_SoMe02.jpg",
-    "full": "images/video/V06_SoMe02.mp4",
-    "alt": "SoMe 2",
-    "caption": "10 sekunders kampagnespot",
-    "description": "Kampagnespot for ugebladet Se & Hør. Animeret og redigeret i Adobe After Effects",
-     "categories": ["SoMe"],
-       "type": "video"
-    
-  },
-     {
-    "thumb": "images/video/thumbs/V07_TVC01.jpg",
-    "full": "images/video/V07_TVC01.mp4",
-    "alt": "TVC 1",
-    "caption": "15 sekunders TV-spot",
-    "description": "TV-spot for ugebladet Billed-Bladet. Speak og lyd er klippet og redigeret i Adobe Audtion. Animation og samlet redigering er lavet i Adobe After Effects",
-     "categories": ["SoMe"],
-       "type": "video"
-    
-  },
-     {
-    "thumb": "images/video/thumbs/V08_SoMe03.jpg",
-    "full": "images/video/V08_SoMe03.mp4",
-    "alt": "SoMe 3",
-    "caption": "10 sekunders kampagnespot",
-    "description": "Kampagnespot for magasinet Spis Bedre. Animeret og redigeret i Adobe After Effects",
-     "categories": ["SoMe"],
-       "type": "video"
-    
-  }
     
 ]
