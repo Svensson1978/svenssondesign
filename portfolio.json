@@ -7,7 +7,15 @@
     "description": "",
      "categories": ["video"],
     "type": "video"
+    },
+{
+    "thumb": "images/thumbs/animeret_fortaelling_thumb50.jpg",
+    "full": "https://vimeo.com/1161791843",
+    "alt": "Animerede fortællinger",
+    "caption": "Animerede fortællinger",
+    "description": "",
+     "categories": ["video"],
+    "type": "video"
     }
-
     
 ]
