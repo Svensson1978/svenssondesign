@@ -11,7 +11,7 @@
     :root {
       /* Caption styling variables - change these to style captions across the site */
       --caption-color: #333333;
-      --caption-font-size: 0.9rem;
+      --caption-font-size: 1.1rem;
       --caption-line-height: 1.2;
     }
 
@@ -140,9 +140,12 @@ main {
 
 .portfolio .portfolio-item a {
   display: block;
-  border: 2px solid #353535;
+  /* border: 2px solid #ffffff; */
   overflow: hidden;
+  box-shadow: #e6e7e1 4px 4px 7px;
 }
+
+
 
 .portfolio .portfolio-item .caption {
   text-align: center; /* eller left, hvad du vil */
@@ -268,7 +271,7 @@ footer .contact-info {
   }
 .header-container {
 
-  padding: 2rem 1rem 0 1rem; 
+  padding: 2rem 1rem 0rem 1rem; 
 
 }
 

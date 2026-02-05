@@ -136,8 +136,9 @@ function applyFilter(filter) {
 <footer>
   <h2>Freelance grafik og foto</h2>
   <div class="contact-info">
-    <span id="phone"></span><span id="mail"></span>
-
+    <span id="phone"></span>
+    <span id="mail"></span>
+     <span id="cvr"></span>
  
   </div>
 
@@ -145,8 +146,10 @@ function applyFilter(filter) {
  
   const phone = ['+45','23','70','23','53'].join(' ');
   const mail = ['design','@','mikkelsvensson.dk'].join('');
+    const cvr = ['34265909'];
   document.getElementById('phone').textContent = 'Tlf. ' + phone;
   document.getElementById('mail').textContent = 'Mail: ' + mail;
+    document.getElementById('cvr').textContent = 'CVR: ' + cvr;
 </script>
 </footer>
 
