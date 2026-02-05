@@ -145,8 +145,6 @@ main {
   box-shadow: #e6e7e1 4px 4px 7px;
 }
 
-
-
 .portfolio .portfolio-item .caption {
   text-align: center; /* eller left, hvad du vil */
   color: var(--caption-color, #333333); /* fallback hvis variablen ikke findes */
