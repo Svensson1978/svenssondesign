@@ -2,20 +2,61 @@
   {
     "thumb": "images/thumbs/undervisning_thumb50.jpg",
     "full": "https://vimeo.com/1163189251",
-    "alt": "Undervisningsvideoer",
-    "caption": "Undervisningsvideoer",
+    "alt": "Undervisning",
+    "caption": "Motion Design",
+    "caption2": "Undervisning",
     "description": "",
      "categories": ["video"],
     "type": "video"
     },
 {
     "thumb": "images/thumbs/animeret_fortaelling_thumb50.jpg",
-    "full": "https://vimeo.com/1161791843",
+    "full": "https://vimeo.com/1163958437",
     "alt": "Animerede fortællinger",
-    "caption": "Animerede fortællinger",
+    "caption": "Motion Design",
+    "caption2": "Animerede fortællinger",
     "description": "",
      "categories": ["video"],
     "type": "video"
+    },
+
+
+    {
+    "thumb": "images/thumbs/SoMe_thumb50.jpg",
+    "full": "https://vimeo.com/video/1163928065",
+    "alt": "SoMe-spots",
+    "caption": "Motion Design",
+    "caption2": "SoMe-spots",
+    "description": "",
+     "categories": ["video"],
+    "type": "video"
+
+    },
+
+    
+    {
+    "thumb": "images/thumbs/tvc_thumb50.jpg",
+    "full": "https://vimeo.com/video/1163974697",
+    "alt": "TV-spots",
+    "caption": "Motion Design",
+    "caption2": "TV-spots",
+    "description": "",
+     "categories": ["video"],
+    "type": "video"
+
     }
     
+    
 ]
+
+
+
+
+
+
+
+
+
+
+
+

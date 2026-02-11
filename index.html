@@ -82,7 +82,11 @@ function renderPortfolio(items) {
     // Video eller billede
     const ext = item.full.split('.').pop().toLowerCase();
     if(ext === 'mp4') {
-      link.setAttribute('data-type', 'video');
+         link.setAttribute('data-type', 'video');
+
+
+
+
     } else {
       link.setAttribute('data-gallery', 'portfolio');
     }
@@ -97,9 +101,12 @@ if(item.description) {
     img.alt = item.alt || '';
     link.appendChild(img);
 
-    const caption = document.createElement('figcaption');
-    caption.className = 'caption';
-    caption.textContent = item.caption || '';
+const caption = document.createElement('figcaption');
+caption.className = 'caption';
+caption.innerHTML = item.caption || '';
+if(item.caption2) {
+  caption.innerHTML += `<br><span class="caption2">${item.caption2}</span>`;
+}
 
     figure.appendChild(link);
     figure.appendChild(caption);
@@ -109,6 +116,10 @@ if(item.description) {
   // Init GLightbox
   if(lightbox) lightbox.destroy();
   lightbox = GLightbox({ selector: '.glightbox' });
+
+
+
+  
 }
 
 function initFilters() {

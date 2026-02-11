@@ -3,25 +3,28 @@
       height: 100%;
         flex-direction: column;
       background: #f3f3ec;
-      color: #333333;
+      color: #35312e;
        margin: 0;
   padding: 0;
   display: flex;
     }
     :root {
       /* Caption styling variables - change these to style captions across the site */
-      --caption-color: #333333;
-      --caption-font-size: 1.1rem;
+      --caption-color: #35312e;
+      --caption-font-size: 1.0rem;
       --caption-line-height: 1.2;
+      
     }
 
+
+    
 .portfolio {
   display: grid;
   grid-template-columns: repeat(auto-fit, 350px);
   /* gap: -15px; */
   justify-content: center; /* centrerer grid’et, når ikke fyldt */
   max-width: 1400px;     /* maks bredde for hele griddet */
-  margin: 0 auto;         /* centrer griddet horisontalt */
+  margin: 0 auto 2rem;         /* centrer griddet horisontalt */
   
 }
 
@@ -121,13 +124,13 @@ main {
   object-fit: cover;
   transform: translateX(-8%); /* start lidt til venstre */
   transition: transform 0.3s ease, opacity 0.3s ease;
-  filter: grayscale(100%); /* sort/hvid som standard */
+  filter: grayscale(100%) blur(0px); /* sort/hvid som standard */
   
 }
 
 .portfolio img:hover {
   transform: translateX(0);   /* glider ind til korrekt position */
-  opacity: 0.8;
+  opacity: 1.0;
   filter: grayscale(0%); /* sort/hvid som standard */
 }
 
@@ -137,6 +140,9 @@ main {
 
   
 }
+
+
+
 
 .portfolio .portfolio-item a {
   display: block;
@@ -169,16 +175,22 @@ main {
   pointer-events: none;
 }
 
-
+.caption2 {
+  font-weight: 500; /* gør fed */
+  display: block;   /* sikrer ny linje */
+  margin-top: 2px;  /* lidt afstand til første linje */
+  font-size: 0.85rem; /* evt. lidt mindre end første linje */
+  color: #ff5d38;
+}
 
 
 /* Billeder og videoer i GLightbox */
-.glightbox-container img,
+/* .glightbox-container img,
 .glightbox-container video {
   max-width: 80vw;
   max-height: 80vh;
   object-fit: contain;
-}
+} */
 
     .gslide-title {
       color: #333333;           /* Hvid tekst */
@@ -212,7 +224,7 @@ padding-bottom: 36px;
   font-family: inherit;
   font-size: 0.85rem;
   color: #f3f3ec;
-  background-color: #333333;
+  background-color: #35312e;
   height: auto;
   
   z-index: 10;
