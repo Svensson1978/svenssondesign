@@ -44,7 +44,39 @@
      "categories": ["video"],
     "type": "video"
 
-    }
+    },
+
+        {
+    "thumb": "images/thumbs/html5_thumb.jpg",
+    "full": "https://vimeo.com/1170679350",
+    "alt": "HTML5-bannere",
+    "caption": "HTML5-bannere",
+    "caption2": "Diverse formater og brands",
+    "description": "",
+     "categories": ["video"],
+    "type": "video"
+
+    },
+
+{
+  "thumb": "images/thumbs/illustration_thumb.jpg",
+  "gallery": [
+    "images/portfolio/illustration1.jpg",
+    "images/portfolio/illustration2.jpg",
+    "images/portfolio/illustration3.jpg"
+  ],
+  "alt": "Illustrationer",
+  "caption": "Illustrationer",
+  "caption2": "Udvalgte forskellige stilarter og formål",
+  "description": "",
+  "categories": ["illustration"],
+  "type": "image"
+}
+
+  
+
+
+
     
     
 ]

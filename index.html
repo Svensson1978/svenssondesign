@@ -44,9 +44,9 @@
 
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 
-<script>
 
-  
+
+<script>
 const portfolioContainer = document.getElementById('portfolio');
 const filterButtons = document.querySelectorAll('.filters button');
 let lightbox;
@@ -70,58 +70,66 @@ fetch('portfolio.json')
 function renderPortfolio(items) {
   portfolioContainer.innerHTML = '';
 
-  items.forEach(item => {
+  items.forEach((item, index) => {
     const figure = document.createElement('figure');
     figure.className = 'portfolio-item';
     if(item.categories) figure.dataset.categories = item.categories.join(' ');
 
-    const link = document.createElement('a');
-    link.href = item.full;
-    link.className = 'glightbox';
+    // --- Main link (thumbnail) peger på første billede eller video ---
+    const mainLink = document.createElement('a');
+    mainLink.href = item.gallery ? item.gallery[0] : item.full;
+    mainLink.className = 'glightbox';
 
-    // Video eller billede
-    const ext = item.full.split('.').pop().toLowerCase();
-    if(ext === 'mp4') {
-         link.setAttribute('data-type', 'video');
-
-
-
-
-    } else {
-      link.setAttribute('data-gallery', 'portfolio');
+    // Video eller galleri
+    if(item.type === 'video'){
+      mainLink.setAttribute('data-type', 'video');
+      mainLink.setAttribute('data-gallery', `portfolio-video-${index}`); // unik video-gallery
+    } else if(item.gallery){
+      mainLink.setAttribute('data-gallery', `portfolio-gallery-${index}`); // unik gallery
     }
 
-    // Caption i lightbox
-if(item.description) {
-  link.setAttribute('data-title', item.description);
-}
+    // Caption
+    if(item.description){
+      mainLink.setAttribute('data-title', item.description);
+    }
 
+    // Thumbnail billede
     const img = document.createElement('img');
     img.src = item.thumb;
     img.alt = item.alt || '';
-    link.appendChild(img);
+    mainLink.appendChild(img);
+    figure.appendChild(mainLink);
 
-const caption = document.createElement('figcaption');
-caption.className = 'caption';
-caption.innerHTML = item.caption || '';
-if(item.caption2) {
-  caption.innerHTML += `<br><span class="caption2">${item.caption2}</span>`;
-}
+    // --- Tilføj skjulte links for resten af galleri-billederne ---
+    if(item.gallery){
+      item.gallery.slice(1).forEach(src => {
+        const hiddenLink = document.createElement('a');
+        hiddenLink.href = src;
+        hiddenLink.className = 'glightbox';
+        hiddenLink.setAttribute('data-gallery', `portfolio-gallery-${index}`);
+        hiddenLink.style.display = 'none';
+        figure.appendChild(hiddenLink);
+      });
+    }
 
-    figure.appendChild(link);
+    // Figcaption
+    const caption = document.createElement('figcaption');
+    caption.className = 'caption';
+    caption.innerHTML = item.caption || '';
+    if(item.caption2){
+      caption.innerHTML += `<br><span class="caption2">${item.caption2}</span>`;
+    }
     figure.appendChild(caption);
+
     portfolioContainer.appendChild(figure);
   });
 
   // Init GLightbox
   if(lightbox) lightbox.destroy();
   lightbox = GLightbox({ selector: '.glightbox' });
-
-
-
-  
 }
 
+// --- Filtre ---
 function initFilters() {
   filterButtons.forEach(btn => {
     btn.addEventListener('click', e => {
@@ -142,6 +150,7 @@ function applyFilter(filter) {
   });
 }
 </script>
+
 </main>
 
 <footer>
