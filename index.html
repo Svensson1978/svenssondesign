@@ -54,7 +54,7 @@ let lightbox;
 // Hash-filter
 let initialFilter = window.location.hash.replace('#','') || 'all';
 
-// Hent JSON
+// get JSON
 fetch('portfolio.json')
   .then(res => res.json())
   .then(data => {
@@ -75,12 +75,12 @@ function renderPortfolio(items) {
     figure.className = 'portfolio-item';
     if(item.categories) figure.dataset.categories = item.categories.join(' ');
 
-    // --- Main link (thumbnail) peger på første billede eller video ---
+    // --- Main link (thumbnail) ---
     const mainLink = document.createElement('a');
     mainLink.href = item.gallery ? item.gallery[0] : item.full;
     mainLink.className = 'glightbox';
 
-    // Video eller galleri
+    // Video or gallery
     if(item.type === 'video'){
       mainLink.setAttribute('data-type', 'video');
       mainLink.setAttribute('data-gallery', `portfolio-video-${index}`); // unik video-gallery
@@ -93,14 +93,14 @@ function renderPortfolio(items) {
       mainLink.setAttribute('data-title', item.description);
     }
 
-    // Thumbnail billede
+    // Thumbnail img
     const img = document.createElement('img');
     img.src = item.thumb;
     img.alt = item.alt || '';
     mainLink.appendChild(img);
     figure.appendChild(mainLink);
 
-    // --- Tilføj skjulte links for resten af galleri-billederne ---
+       // --- add hidden links for the rest of gallery-img's ---
     if(item.gallery){
       item.gallery.slice(1).forEach(src => {
         const hiddenLink = document.createElement('a');
@@ -129,7 +129,7 @@ function renderPortfolio(items) {
   lightbox = GLightbox({ selector: '.glightbox' });
 }
 
-// --- Filtre ---
+// --- Filters ---
 function initFilters() {
   filterButtons.forEach(btn => {
     btn.addEventListener('click', e => {
@@ -168,7 +168,7 @@ function applyFilter(filter) {
   const mail = ['design','@','mikkelsvensson.dk'].join('');
     const cvr = ['34265909'];
   document.getElementById('phone').textContent = 'Tlf. ' + phone;
-  document.getElementById('mail').textContent = 'Mail: ' + mail;
+  document.getElementById('mail').textContent = mail;
     document.getElementById('cvr').textContent = 'CVR: ' + cvr;
 </script>
 </footer>
